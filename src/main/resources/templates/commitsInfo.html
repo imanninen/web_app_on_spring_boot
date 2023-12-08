@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Thymeleaf Example</title>
+</head>
+<body>
+    <h1>Commits</h1>
+    <h3 th:if="${listOfCommits.empty}">
+        There are no commits!
+    </h3>
+
+    <ul th:each="m_commit : ${listOfCommits}">
+        <li>
+            <h3>Commit message:<span style="padding: 10px" th:text='${m_commit.commit.message}'> Title </span></h3>
+            <h3>Author:<span style="padding: 10px" th:text="${m_commit.committer.login}"> Author </span></h3>
+            <ul th:each="m_file : ${m_commit.files}">
+                <li><span style="padding: 5px" th:text="${m_file.fileName}"> Name </span><span style="padding: 5px" th:text="${m_file.status}"> status </span></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

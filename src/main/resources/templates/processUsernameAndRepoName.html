@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="${username}"></p>
+    <p th:text="${repoName}"></p>
+    <form action="#" method="post" th:action="@{}">
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>

@@ -16,5 +16,8 @@
         </label>
         <h2><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></h2>
     </form>
+    <div th:if="${errorMessage != null}">
+        <h3 style="color: lightcoral" th:text="${errorMessage}"></h3>
+    </div>
 </body>
 </html>

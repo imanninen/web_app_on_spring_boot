@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping
 class FormController {
     @GetMapping("/")
     fun processUsernameAndRepoName(model: Model): String {
-        val rr = RepoInfo()
-        rr.username = ""
-        rr.repoName = ""
-        model.addAttribute("repoInfo", rr)
+        val tempRepoInfo = RepoInfo("", "")
+        model.addAttribute("repoInfo", tempRepoInfo)
         return "index"
     }
 }
